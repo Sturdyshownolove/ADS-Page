@@ -105,7 +105,7 @@ require_once("include/header.php");
                 <?php if (!empty($ilanYazdir['telefon'])): ?>
                 <div style="margin-top:15px;">
                     <a class="btn btn-primary btn-block btn-lg" href="tel:<?= htmlspecialchars($ilanYazdir['telefon']); ?>" rel="nofollow">TELEFONLA ARA</a>
-                    <a class="btn btn-success btn-block btn-lg" href="https://wa.me/<?= formatWhatsappNumber($ilanYazdir['telefon']); ?>?text=<?= rawurlencode('Merhaba numaranızı Buca Kale sitesinden buldum sizinle görüşmek istiyorum detaylı bilgi alabilir miyim?'); ?>" target="_blank" rel="nofollow noopener">WHATSAPP'TAN YAZ</a>
+                    <a class="btn btn-success btn-block btn-lg" href="https://wa.me/<?= formatWhatsappNumber($ilanYazdir['telefon']); ?>?text=<?= rawurlencode('Merhaba numaranızı Hizmet Rehberi sitesinden buldum sizinle görüşmek istiyorum detaylı bilgi alabilir miyim?'); ?>" target="_blank" rel="nofollow noopener">WHATSAPP'TAN YAZ</a>
                 </div>
                 <?php endif; ?>
             </div>

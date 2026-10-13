@@ -86,7 +86,7 @@ $makaleler = $blogQuery->fetchAll(PDO::FETCH_ASSOC);
 
     <header class="header-bar">
         <a href="<?= $amp_url; ?>/"><?= htmlspecialchars($AmpBilgi['amp_baslik'] ?? 'Site Adı'); ?></a>
-        <a href="<?= htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/bucamodel'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
+        <a href="<?= htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/exampleportal'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
     </header>
 
     <main>

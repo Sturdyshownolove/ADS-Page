@@ -51,7 +51,7 @@ require_once("include/header.php");
                 <?php if (!empty($ustYazi)): ?>
                 <div><?= $ustYazi; ?></div>
                 <?php else: ?>
-                <h1 class="main-title"><?= htmlspecialchars($SiteBilgi['siteadi'] ?? 'Buca Model ☘️ İzmir Model ⭐️ VIP İlanlar'); ?></h1>
+                <h1 class="main-title"><?= htmlspecialchars($SiteBilgi['siteadi'] ?? 'ÖNE ÇIKAN İLAN ☘️ İzmir Hizmet Rehberi ⭐️ Güncel İlanlar'); ?></h1>
                 <p class="site-description"><?= htmlspecialchars($SiteBilgi['meta'] ?? 'Gizli, lüks ve kaliteli elit bayan ilanları.'); ?></p>
                 <?php endif; ?>
             </div>
@@ -75,7 +75,7 @@ require_once("include/header.php");
                 <?php foreach($megas as $uye): ?>
                 <?php 
                     $is_ad = (in_array($uye['resim'], ['mega.webp','vip.webp','gold.webp','elit.webp','platin1.webp','platin.webp']) || strpos($uye['isim'], 'REKLAM') !== false);
-                    $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/bucamodel';
+                    $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/exampleportal';
                 ?>
                 <div class="list2">
                     <div class="isim mega-isim"><?= $is_ad ? 'REKLAM ALANI' : 'İZMİR MODEL'; ?></div>
@@ -99,7 +99,7 @@ require_once("include/header.php");
                 <?php foreach($vips as $uye): ?>
                 <?php 
                     $is_ad = (in_array($uye['resim'], ['mega.webp','vip.webp','gold.webp','elit.webp','platin1.webp','platin.webp']) || strpos($uye['isim'], 'REKLAM') !== false);
-                    $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/bucamodel';
+                    $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/exampleportal';
                 ?>
                 <div class="list2">
                     <div class="isim vip-isim"><?= $is_ad ? 'REKLAM ALANI' : 'İZMİR MODEL'; ?></div>
@@ -123,10 +123,10 @@ require_once("include/header.php");
                 <?php foreach($golds as $uye): ?>
                 <?php 
                     $is_ad = (in_array($uye['resim'], ['mega.webp','vip.webp','gold.webp','elit.webp','platin1.webp','platin.webp']) || strpos($uye['isim'], 'REKLAM') !== false);
-                    $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/bucamodel';
+                    $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/exampleportal';
                 ?>
                 <div class="list2">
-                    <div class="isim gold-isim"><?= $is_ad ? 'REKLAM ALANI' : 'BUCA MODEL'; ?></div>
+                    <div class="isim gold-isim"><?= $is_ad ? 'REKLAM ALANI' : 'ÖNE ÇIKAN İLAN'; ?></div>
                     <a href="<?= $is_ad ? $tg_link : 'ilan/' . htmlspecialchars($uye['seo']) . '/' . intval($uye['id']) . '.html'; ?>" <?= $is_ad ? 'target="_blank" rel="noopener"' : ''; ?>>
                         <img src="modelresim/<?= htmlspecialchars($uye['resim'] ?: 'resimyok.png'); ?>" alt="<?= htmlspecialchars($uye['isim']); ?>" width="100" height="150" loading="lazy">
                     </a>
@@ -147,7 +147,7 @@ require_once("include/header.php");
                 <?php foreach($elits as $uye): ?>
                 <?php 
                     $is_ad = (in_array($uye['resim'], ['mega.webp','vip.webp','gold.webp','elit.webp','platin1.webp','platin.webp']) || strpos($uye['isim'], 'REKLAM') !== false);
-                    $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/bucamodel';
+                    $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/exampleportal';
                 ?>
                 <div class="list2">
                     <div class="isim elit-isim"><?= $is_ad ? 'REKLAM ALANI' : 'ELİT MODEL'; ?></div>

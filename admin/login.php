@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Yap | BUCA EX</title>
+    <title>Giriş Yap | PortalEX</title>
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -57,10 +57,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
         <!-- Brand Header -->
         <div class="text-center mb-8">
             <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl p-3 mb-4">
-                <img src="../favicon.ico" alt="BUCA EX" class="w-10 h-10 object-contain">
+                <img src="../favicon.ico" alt="PortalEX" class="w-10 h-10 object-contain">
             </div>
             <h1 class="text-2xl font-bold text-white tracking-tight">BUCA <span class="text-sky-400">EX</span></h1>
-            <p class="text-xs text-slate-400 mt-1">Buca EX Yönetim Paneli</p>
+            <p class="text-xs text-slate-400 mt-1">PortalEX Yönetim Paneli</p>
         </div>
 
         <!-- Login Card -->
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
             </form>
         </div>
 
-        <p class="text-center text-xs text-slate-500 mt-6">© 2026 Buca EX Tüm Hakları Saklıdır.</p>
+        <p class="text-center text-xs text-slate-500 mt-6">© 2026 PortalEX Tüm Hakları Saklıdır.</p>
     </div>
 
 </body>

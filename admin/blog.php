@@ -199,7 +199,7 @@ $makaleler = $conn->query("
             
             <div>
                 <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Makale Başlığı (*)</label>
-                <input type="text" name="baslik" required placeholder="Örn: Buca Model Rehberi" class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500">
+                <input type="text" name="baslik" required placeholder="Örn: ÖNE ÇIKAN İLAN Rehberi" class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500">
             </div>
 
             <div>

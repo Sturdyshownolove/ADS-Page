@@ -2,7 +2,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 <div class="container">
 <div class="navbar-header">
-<a href="<?php echo htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/bucamodel', ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
+<a href="<?php echo htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/exampleportal', ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
 <a href="anasayfa.html" class="navbar-brand effect-shine"><?php echo $SiteBilgi['logoyazi']; ?></a>
 </div>
 <div id="navbar-menu" class="collapse navbar-collapse">

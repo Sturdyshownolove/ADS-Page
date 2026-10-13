@@ -3,7 +3,7 @@
 <!-- DASHBOARD TOP HEADER -->
 <div class="mb-8">
     <h2 class="text-2xl font-extrabold text-white tracking-tight">Hoş Geldiniz, <span class="text-sky-400"><?= htmlspecialchars($_SESSION['site_user']); ?></span> 👋</h2>
-    <p class="text-xs text-slate-400 mt-1">Buca EX portalının güncel durum özeti ve hızlı yönetim araçları.</p>
+    <p class="text-xs text-slate-400 mt-1">PortalEX portalının güncel durum özeti ve hızlı yönetim araçları.</p>
 </div>
 
 <!-- KPI STATS GRID -->

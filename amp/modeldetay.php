@@ -106,7 +106,7 @@ $og_image_url = $site_url . '/modelresim/' . htmlspecialchars($ilanYazdir['resim
 
     <header class="header-bar">
         <a href="<?= $amp_url; ?>/"><?= htmlspecialchars($AmpBilgi['amp_baslik'] ?? 'Site Adı'); ?></a>
-        <a href="<?= htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/bucamodel'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
+        <a href="<?= htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/exampleportal'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
     </header>
 
     <div style="margin: 10px 12px 0 12px;">
@@ -142,7 +142,7 @@ $og_image_url = $site_url . '/modelresim/' . htmlspecialchars($ilanYazdir['resim
             <div class="content">
                 <div class="contact-buttons">
                     <a class="phone-btn" href="tel:<?= htmlspecialchars($ilanYazdir['telefon']); ?>">TELEFONLA ARA</a>
-                    <a class="whatsapp-btn" href="https://wa.me/<?= formatWhatsappNumber($ilanYazdir['telefon']); ?>?text=<?= rawurlencode('Merhaba numaranızı Buca Kale sitesinden buldum sizinle görüşmek istiyorum detaylı bilgi alabilir miyim?'); ?>" target="_blank">WHATSAPP'TAN YAZ</a>
+                    <a class="whatsapp-btn" href="https://wa.me/<?= formatWhatsappNumber($ilanYazdir['telefon']); ?>?text=<?= rawurlencode('Merhaba numaranızı Hizmet Rehberi sitesinden buldum sizinle görüşmek istiyorum detaylı bilgi alabilir miyim?'); ?>" target="_blank">WHATSAPP'TAN YAZ</a>
                 </div>
             </div>
         </div>

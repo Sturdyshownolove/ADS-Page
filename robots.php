@@ -8,7 +8,7 @@ header("Content-Type: text/plain; charset=UTF-8");
 ?>
 User-agent: *
 Allow: /
-Disallow: /ex0-1mil/
+Disallow: /admin/
 Disallow: /include/
 Disallow: /vendor/
 Disallow: /logs/
@@ -20,15 +20,15 @@ Sitemap: <?= $site_url; ?>/rss.xml
 # AI Crawler Yönetimi
 User-agent: GPTBot
 Allow: /
-Disallow: /ex0-1mil/
+Disallow: /admin/
 
 User-agent: ClaudeBot
 Allow: /
-Disallow: /ex0-1mil/
+Disallow: /admin/
 
 User-agent: PerplexityBot
 Allow: /
-Disallow: /ex0-1mil/
+Disallow: /admin/
 
 User-agent: Google-Extended
 Allow: /

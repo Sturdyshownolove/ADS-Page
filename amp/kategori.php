@@ -95,7 +95,7 @@ $ilanlar = $ilanQuery->fetchAll();
         </amp-sidebar>
     <header class="header-bar">
         <a href="<?= $amp_url; ?>/"><?= htmlspecialchars($AmpBilgi['amp_baslik'] ?? 'Site Adı'); ?></a>
-        <a href="<?= htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/bucamodel'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
+        <a href="<?= htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/exampleportal'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
     </header>
 
     <main>
@@ -106,7 +106,7 @@ $ilanlar = $ilanQuery->fetchAll();
         <?php if(count($ilanlar) > 0): foreach($ilanlar as $ilan): ?>
         <?php 
             $is_ad = (strpos($ilan['resim'], 'platin') !== false || strpos($ilan['isim'], 'REKLAM') !== false);
-            $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/bucamodel';
+            $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/exampleportal';
         ?>
         <a class="ilan-card" href="<?= $is_ad ? $tg_link : $amp_url . '/modeldetay.php?id=' . intval($ilan['id']); ?>" <?= $is_ad ? 'target="_blank" rel="noopener"' : ''; ?>>
             <amp-img src="<?= $site_url; ?>/modelresim/<?= htmlspecialchars($ilan['resim'] ?: 'resimyok.png'); ?>"

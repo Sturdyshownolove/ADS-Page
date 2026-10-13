@@ -38,7 +38,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yönetim Paneli | BUCA EX</title>
+    <title>Yönetim Paneli | PortalEX</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -87,11 +87,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <div class="h-16 flex items-center justify-between px-5 border-b border-slate-800/80 bg-slate-900/50">
             <a href="index.php" class="flex items-center gap-3">
                 <div class="w-9 h-9 rounded-xl bg-slate-800 p-1.5 flex items-center justify-center border border-slate-700 shadow-md">
-                    <img src="../favicon.ico" alt="BUCA EX" class="w-6 h-6 object-contain">
+                    <img src="../favicon.ico" alt="PortalEX" class="w-6 h-6 object-contain">
                 </div>
                 <div class="flex flex-col">
                     <span class="font-bold text-base tracking-tight text-white leading-none">BUCA <span class="text-sky-400">EX</span></span>
-                    <span class="text-[10px] text-slate-400 font-medium mt-1">Buca EX</span>
+                    <span class="text-[10px] text-slate-400 font-medium mt-1">PortalEX</span>
                 </div>
             </a>
         </div>

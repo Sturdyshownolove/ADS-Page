@@ -71,7 +71,7 @@ animation: BackgroundGradient 30s ease infinite;}
 transition: all 0.6s ease-in-out;
 }
 
-.eskort.efekt:after {
+.ilan-karti.efekt:after {
 content: '';
 position: absolute;
 top: 0;
@@ -80,7 +80,7 @@ width: 0;
 height: 100%;
 background: rgba(255, 255, 255, 1);
 }
-.eskort.efekt:hover:after {
+.ilan-karti.efekt:hover:after {
 width: 97%;
 background-color: rgba(255,255,255,0.3);
 -webkit-transition: all 0.6s ease-in-out;
@@ -88,7 +88,7 @@ background-color: rgba(255,255,255,0.3);
 transition: all 0.6s ease-in-out;
 z-index:-9;
 }
-.eskort:active:after {
+.ilan-karti:active:after {
   opacity: 1; 
 }
 

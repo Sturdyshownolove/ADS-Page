@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
             trim($_POST['amp_sub'] ?? ''),
             trim($_POST['amp_baslik'] ?? ''),
             trim($_POST['amp_iletisim'] ?? ''),
-            trim($_POST['amp_telegram'] ?? 'https://t.me/bucamodel'),
+            trim($_POST['amp_telegram'] ?? 'https://t.me/exampleportal'),
             trim($_POST['amp_headerarkarenk'] ?? '#ce0056'),
             trim($_POST['amp_headeryazirenk'] ?? '#ffffff'),
             trim($_POST['amp_baslikarkarenk'] ?? '#ce0056'),
@@ -136,7 +136,7 @@ $AmpBilgi = $conn->query("SELECT * FROM ampayar WHERE amp_id = 1")->fetch(PDO::F
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">✈ Telegram Reklam Yönlendirme Linki (*)</label>
-                    <input type="url" name="amp_telegram" value="<?= htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/bucamodel'); ?>" required placeholder="https://t.me/bucamodel" class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500 font-mono">
+                    <input type="url" name="amp_telegram" value="<?= htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/exampleportal'); ?>" required placeholder="https://t.me/exampleportal" class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500 font-mono">
                     <p class="text-[10px] text-slate-400 mt-1">Boş reklam kartlarına basılınca doğrudan bu Telegram adresine gidilir.</p>
                 </div>
 

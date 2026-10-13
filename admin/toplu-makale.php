@@ -5,7 +5,7 @@ $msg = '';
 $msg_type = '';
 $yuklenen_sayisi = 0;
 
-$target_folder = 'C:/Users/Pc/Desktop/makaleler';
+$target_folder = 'uploads/articles';
 
 function getAvailableBlogImages() {
     $model_dir = __DIR__ . '/../modelresim/';
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['otomatik_yukle'])) {
     $tum_resimler = getAvailableBlogImages();
     $blog_dir = __DIR__ . '/../blogresim/';
 
-    $sabit_anahtarlar = 'buca model, izmir buca model, buca vip model, buca saatlik model, buca eve gelen model, buca otele gelen model, buca ucuz model, buca elit model, buca model bayan, şirinyer model, buca şirinyer model, izmir şirinyer model, buca hasanağa model, hasanağa parkı model, buca gölet model, gölet model bayan, adatepe model, buca adatepe model, buca koop model, buca koop model bayan, kuruçeşme model, buca kuruçeşme model, buca model numaraları, buca model ilanları, buca model rehberi, buca bayan model, buca bağımsız model, buca türbanlı model, buca liseli model, buca masaj salonu';
+    $sabit_anahtarlar = 'ilan rehberi, izmir hizmet rehberi, kurumsal danışmanlık, web yazılım, grafik tasarım, seo danışmanlığı, özel ders, fotoğrafçılık, bilişim hizmetleri, izmir ilanlar';
 
     $makale_icerikleri = [];
 
@@ -136,34 +136,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['otomatik_yukle'])) {
             if (preg_match('/<h2>(.*?)<\/h2>/i', $content, $match)) {
                 $baslik = strip_tags(trim($match[1]));
             } else {
-                $baslik = 'Buca Model Rehberi - ' . basename($file_label, '.txt');
+                $baslik = 'Hizmet Rehberi Makalesi - ' . basename($file_label, '.txt');
             }
 
             // Kategori Tespiti & Odak Kelime Belirleme
-            $kategori_id = 36; // Varsayılan: Buca Model
-            $odak_kelime = 'buca model';
+            $kategori_id = 1; // Varsayılan: Hizmet Rehberi
+            $odak_kelime = 'hizmet rehberi';
 
             $content_lower = mb_strtolower($content, 'UTF-8');
             $baslik_lower = mb_strtolower($baslik, 'UTF-8');
             
-            if (strpos($content_lower, 'şirinyer') !== false || strpos($baslik_lower, 'şirinyer') !== false) {
-                $kategori_id = 10;
-                $odak_kelime = 'şirinyer model';
-            } elseif (strpos($content_lower, 'hasanağa') !== false || strpos($baslik_lower, 'hasanağa') !== false) {
-                $kategori_id = 41;
-                $odak_kelime = 'buca hasanağa model';
-            } elseif (strpos($content_lower, 'gölet') !== false || strpos($baslik_lower, 'gölet') !== false) {
-                $kategori_id = 18;
-                $odak_kelime = 'buca gölet model';
-            } elseif (strpos($content_lower, 'adatepe') !== false || strpos($baslik_lower, 'adatepe') !== false) {
-                $kategori_id = 19;
-                $odak_kelime = 'adatepe model';
-            } elseif (strpos($content_lower, 'koop') !== false || strpos($baslik_lower, 'koop') !== false) {
-                $kategori_id = 20;
-                $odak_kelime = 'buca koop model';
-            } elseif (strpos($content_lower, 'kuruçeşme') !== false || strpos($baslik_lower, 'kuruçeşme') !== false) {
-                $kategori_id = 21;
-                $odak_kelime = 'kuruçeşme model';
+            if (strpos($content_lower, 'yazılım') !== false || strpos($baslik_lower, 'yazılım') !== false) {
+                $kategori_id = 1;
+                $odak_kelime = 'web yazılım';
+            } elseif (strpos($content_lower, 'tasarım') !== false || strpos($baslik_lower, 'tasarım') !== false) {
+                $kategori_id = 2;
+                $odak_kelime = 'grafik tasarım';
+            } elseif (strpos($content_lower, 'danışmanlık') !== false || strpos($baslik_lower, 'danışmanlık') !== false) {
+                $kategori_id = 3;
+                $odak_kelime = 'kurumsal danışmanlık';
+            } elseif (strpos($content_lower, 'eğitim') !== false || strpos($baslik_lower, 'eğitim') !== false) {
+                $kategori_id = 4;
+                $odak_kelime = 'özel eğitim';
             }
 
             // Rastgele Görsel Seçimi & blogresim/ dizinine kopyalama
@@ -185,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['otomatik_yukle'])) {
                 $temiz_p = strip_tags(trim($pmatch[1]));
                 $meta = mb_substr($temiz_p, 0, 155, 'UTF-8');
             } else {
-                $meta = 'Buca model bayan ilanları ve VIP buluşma rehberi.';
+                $meta = 'İzmir ve Ege bölgesi kurumsal hizmet sağlayıcıları ve ilan rehberi.';
             }
 
             $seo = seo($baslik);

@@ -90,7 +90,7 @@ $canonical_url = $site_url . '/yazi/' . htmlspecialchars($yaziYaz['seo']) . '/' 
 
     <header class="header-bar">
         <a href="<?= $amp_url; ?>/"><?= htmlspecialchars($AmpBilgi['amp_baslik'] ?? 'Site Adı'); ?></a>
-        <a href="<?= htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/bucamodel'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
+        <a href="<?= htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/exampleportal'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
     </header>
 
     <div style="margin: 10px 12px 0 12px;">

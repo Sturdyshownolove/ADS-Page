@@ -117,12 +117,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['guncelle'])) {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
                 <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Odak Kelime</label>
-                <input type="text" name="odak_kelime" value="<?= htmlspecialchars($row['odak_kelime'] ?? ''); ?>" placeholder="Örn: buca model" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-sky-500">
+                <input type="text" name="odak_kelime" value="<?= htmlspecialchars($row['odak_kelime'] ?? ''); ?>" placeholder="Örn: ÖNE ÇIKAN İLAN" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-sky-500">
             </div>
 
             <div>
                 <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Anahtar Kelimeler</label>
-                <input type="text" name="anahtar" value="<?= htmlspecialchars($row['anahtar'] ?? ''); ?>" placeholder="Örn: buca model, izmir model" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-sky-500">
+                <input type="text" name="anahtar" value="<?= htmlspecialchars($row['anahtar'] ?? ''); ?>" placeholder="Örn: ÖNE ÇIKAN İLAN, izmir model" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-sky-500">
             </div>
         </div>
 

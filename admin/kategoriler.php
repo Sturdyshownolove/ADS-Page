@@ -55,7 +55,7 @@ $kategoriler = $conn->query("SELECT * FROM kategori ORDER BY id ASC")->fetchAll(
             
             <div>
                 <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Kategori Adı (*)</label>
-                <input type="text" name="baslik" required placeholder="Örn: BUCA MODEL" class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500">
+                <input type="text" name="baslik" required placeholder="Örn: ÖNE ÇIKAN İLAN" class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500">
             </div>
 
             <div>
@@ -70,7 +70,7 @@ $kategoriler = $conn->query("SELECT * FROM kategori ORDER BY id ASC")->fetchAll(
 
             <div>
                 <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">Anahtar Kelimeler</label>
-                <input type="text" name="anahtar" placeholder="buca model, izmir model..." class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500">
+                <input type="text" name="anahtar" placeholder="ÖNE ÇIKAN İLAN, izmir model..." class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-sky-500">
             </div>
 
             <button type="submit" name="ekle" class="w-full py-3 bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs rounded-xl shadow-lg shadow-sky-500/20 transition-all">

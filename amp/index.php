@@ -108,7 +108,7 @@ $canonical_url = $site_url;
     </amp-sidebar>
     <header class="header-bar">
         <a href="<?= $amp_url; ?>/"><?= htmlspecialchars($AmpBilgi['amp_baslik'] ?? 'Site Adı'); ?></a>
-        <a href="<?= htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/bucamodel'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
+        <a href="<?= htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/exampleportal'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
     </header>
 
     <section class="vitrin-hero">
@@ -116,7 +116,7 @@ $canonical_url = $site_url;
         <?php if (!empty($ustYazi)): ?>
             <div><?= $ustYazi; ?></div>
         <?php else: ?>
-            <h1><?= htmlspecialchars($SiteBilgi['siteadi'] ?? 'Buca Model ☘️ İzmir Model ⭐️ VIP İlanlar'); ?></h1>
+            <h1><?= htmlspecialchars($SiteBilgi['siteadi'] ?? 'ÖNE ÇIKAN İLAN ☘️ İzmir Hizmet Rehberi ⭐️ Güncel İlanlar'); ?></h1>
             <p><?= htmlspecialchars($SiteBilgi['meta'] ?? 'Gizli, lüks ve kaliteli elit bayan ilanları.'); ?></p>
         <?php endif; ?>
     </section>
@@ -135,7 +135,7 @@ $canonical_url = $site_url;
             <?php foreach($megaUyeler as $Mega): ?>
             <?php 
                 $is_ad = (in_array($Mega['resim'], ['mega.webp','vip.webp','gold.webp','elit.webp','platin1.webp','platin.webp']) || strpos($Mega['isim'], 'REKLAM') !== false);
-                $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/bucamodel';
+                $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/exampleportal';
             ?>
             <div class="list2">
                 <div class="isim mega-isim"><?= $is_ad ? 'REKLAM ALANI' : 'İZMİR MODEL'; ?></div>
@@ -155,7 +155,7 @@ $canonical_url = $site_url;
             <?php foreach($vipUyeler as $Vip): ?>
             <?php 
                 $is_ad = (in_array($Vip['resim'], ['mega.webp','vip.webp','gold.webp','elit.webp','platin1.webp','platin.webp']) || strpos($Vip['isim'], 'REKLAM') !== false);
-                $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/bucamodel';
+                $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/exampleportal';
             ?>
             <div class="list2">
                 <div class="isim vip-isim"><?= $is_ad ? 'REKLAM ALANI' : 'İZMİR MODEL'; ?></div>
@@ -175,10 +175,10 @@ $canonical_url = $site_url;
             <?php foreach($goldUyeler as $Gold): ?>
             <?php 
                 $is_ad = (in_array($Gold['resim'], ['mega.webp','vip.webp','gold.webp','elit.webp','platin1.webp','platin.webp']) || strpos($Gold['isim'], 'REKLAM') !== false);
-                $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/bucamodel';
+                $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/exampleportal';
             ?>
             <div class="list2">
-                <div class="isim gold-isim"><?= $is_ad ? 'REKLAM ALANI' : 'BUCA MODEL'; ?></div>
+                <div class="isim gold-isim"><?= $is_ad ? 'REKLAM ALANI' : 'ÖNE ÇIKAN İLAN'; ?></div>
                 <a href="<?= $is_ad ? $tg_link : $amp_url . '/ilan/' . htmlspecialchars($Gold['seo']) . '/' . intval($Gold['id']) . '.html'; ?>" <?= $is_ad ? 'target="_blank" rel="noopener"' : ''; ?>>
                     <amp-img class="listelegold" src="<?= $site_url; ?>/modelresim/<?= htmlspecialchars($Gold['resim']); ?>" width="100" height="150" layout="responsive" alt="<?= htmlspecialchars($Gold['isim']); ?>"></amp-img>
                 </a>
@@ -195,7 +195,7 @@ $canonical_url = $site_url;
             <?php foreach($elitUyeler as $Elit): ?>
             <?php 
                 $is_ad = (in_array($Elit['resim'], ['mega.webp','vip.webp','gold.webp','elit.webp','platin1.webp','platin.webp']) || strpos($Elit['isim'], 'REKLAM') !== false);
-                $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/bucamodel';
+                $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/exampleportal';
             ?>
             <div class="list2">
                 <div class="isim elit-isim"><?= $is_ad ? 'REKLAM ALANI' : 'ELİT MODEL'; ?></div>

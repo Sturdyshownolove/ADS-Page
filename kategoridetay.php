@@ -81,7 +81,7 @@ require_once("include/header.php");
             <?php foreach($uyeler as $uye): ?>
             <?php 
                 $is_ad = (strpos($uye['resim'], 'platin') !== false || strpos($uye['isim'], 'REKLAM') !== false);
-                $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/bucamodel';
+                $tg_link = !empty($AmpBilgi['amp_telegram']) ? htmlspecialchars($AmpBilgi['amp_telegram']) : 'https://t.me/exampleportal';
             ?>
             <div class="col-md-3 col-sm-4 col-xs-6">
                 <a href="<?= $is_ad ? $tg_link : 'ilan/' . htmlspecialchars($uye['seo']) . '/' . intval($uye['id']) . '.html'; ?>" <?= $is_ad ? 'target="_blank" rel="noopener"' : ''; ?> class="thumbnail">

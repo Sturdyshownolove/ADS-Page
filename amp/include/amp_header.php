@@ -20,44 +20,44 @@ $currentPage = isset($currentPage) ? $currentPage : 'index';
 $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
 // Generate dynamic meta data based on page type
-$pageTitle = isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Buca Elit Model";
-$pageDescription = isset($SiteBilgi["meta"]) ? $SiteBilgi["meta"] : "Buca model hizmetleri, elit bayanlar ile unutulmaz anlar yaşayın.";
-$pageKeywords = isset($SiteBilgi["anahtar"]) ? $SiteBilgi["anahtar"] : "Buca model, elit model, Buca bayan, model hizmetleri";
+$pageTitle = isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Hizmet Rehberi";
+$pageDescription = isset($SiteBilgi["meta"]) ? $SiteBilgi["meta"] : "ÖNE ÇIKAN İLAN hizmetleri, elit bayanlar ile unutulmaz anlar yaşayın.";
+$pageKeywords = isset($SiteBilgi["anahtar"]) ? $SiteBilgi["anahtar"] : "ÖNE ÇIKAN İLAN, elit model, Buca uzman, model hizmetleri";
 $pageImage = (isset($SiteBilgi["siteurl"]) ? $SiteBilgi["siteurl"] : "http://localhost/") . "img/model.webp";
 
 // Page-specific meta data
 switch ($currentPage) {
     case 'index':
-        $pageTitle = (isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Buca Elit Model") . " - " . (isset($SiteBilgi["logoyazi"]) ? $SiteBilgi["logoyazi"] : "Buca Elit Model Hizmetleri");
+        $pageTitle = (isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Hizmet Rehberi") . " - " . (isset($SiteBilgi["logoyazi"]) ? $SiteBilgi["logoyazi"] : "Hizmet Rehberi Hizmetleri");
         break;
     case 'blog':
-        $pageTitle = "Blog ve Makaleler - " . (isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Buca Elit Model");
-        $pageDescription = "En güncel blog yazıları ve makaleler. " . (isset($SiteBilgi["meta"]) ? $SiteBilgi["meta"] : "Buca model hizmetleri hakkında bilgiler.");
+        $pageTitle = "Blog ve Makaleler - " . (isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Hizmet Rehberi");
+        $pageDescription = "En güncel blog yazıları ve makaleler. " . (isset($SiteBilgi["meta"]) ? $SiteBilgi["meta"] : "ÖNE ÇIKAN İLAN hizmetleri hakkında bilgiler.");
         break;
     case 'modeldetay':
         if (isset($ilanYazdir) && is_array($ilanYazdir) && isset($ilanYazdir['isim'])) {
-            $pageTitle = htmlspecialchars($ilanYazdir['isim'], ENT_QUOTES, 'UTF-8') . " - " . (isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Buca Elit Model");
-            $pageDescription = isset($ilanYazdir['meta']) ? $ilanYazdir['meta'] : htmlspecialchars($ilanYazdir['isim'], ENT_QUOTES, 'UTF-8') . " hakkında detaylı bilgiler. " . (isset($SiteBilgi["meta"]) ? $SiteBilgi["meta"] : "Buca model hizmetleri");
+            $pageTitle = htmlspecialchars($ilanYazdir['isim'], ENT_QUOTES, 'UTF-8') . " - " . (isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Hizmet Rehberi");
+            $pageDescription = isset($ilanYazdir['meta']) ? $ilanYazdir['meta'] : htmlspecialchars($ilanYazdir['isim'], ENT_QUOTES, 'UTF-8') . " hakkında detaylı bilgiler. " . (isset($SiteBilgi["meta"]) ? $SiteBilgi["meta"] : "ÖNE ÇIKAN İLAN hizmetleri");
             $pageImage = (isset($SiteBilgi["siteurl"]) ? $SiteBilgi["siteurl"] : "http://localhost/") . "modelresim/" . htmlspecialchars($ilanYazdir['resim'], ENT_QUOTES, 'UTF-8');
         }
         break;
     case 'blogdetay':
         if (isset($yaziYaz) && is_array($yaziYaz) && isset($yaziYaz['baslik'])) {
-            $pageTitle = htmlspecialchars($yaziYaz['baslik'], ENT_QUOTES, 'UTF-8') . " - " . (isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Buca Elit Model");
+            $pageTitle = htmlspecialchars($yaziYaz['baslik'], ENT_QUOTES, 'UTF-8') . " - " . (isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Hizmet Rehberi");
             $pageDescription = isset($yaziYaz['aciklama']) ? strip_tags($yaziYaz['aciklama']) : htmlspecialchars($yaziYaz['baslik'], ENT_QUOTES, 'UTF-8') . " hakkında detaylı bilgiler.";
             $pageImage = (isset($SiteBilgi["siteurl"]) ? $SiteBilgi["siteurl"] : "http://localhost/") . "blogresim/" . htmlspecialchars($yaziYaz['resim'], ENT_QUOTES, 'UTF-8');
         }
         break;
     case 'kategori':
         if (isset($kat) && is_array($kat) && isset($kat['kategoriadi'])) {
-            $pageTitle = htmlspecialchars($kat['kategoriadi'], ENT_QUOTES, 'UTF-8') . " - " . (isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Buca Elit Model");
-            $pageDescription = htmlspecialchars($kat['kategoriadi'], ENT_QUOTES, 'UTF-8') . " kategorisindeki model bayanlar. " . (isset($SiteBilgi["meta"]) ? $SiteBilgi["meta"] : "Buca model hizmetleri");
+            $pageTitle = htmlspecialchars($kat['kategoriadi'], ENT_QUOTES, 'UTF-8') . " - " . (isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Hizmet Rehberi");
+            $pageDescription = htmlspecialchars($kat['kategoriadi'], ENT_QUOTES, 'UTF-8') . " kategorisindeki hizmet verenler. " . (isset($SiteBilgi["meta"]) ? $SiteBilgi["meta"] : "ÖNE ÇIKAN İLAN hizmetleri");
         }
         break;
     case 'etiket':
         if (!empty($EtiketBaslik)) {
-            $pageTitle = htmlspecialchars($EtiketBaslik, ENT_QUOTES, 'UTF-8') . " - " . (isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Buca Elit Model");
-            $pageDescription = htmlspecialchars($EtiketBaslik, ENT_QUOTES, 'UTF-8') . " etiketi ile ilgili model bayanlar. " . (isset($SiteBilgi["meta"]) ? $SiteBilgi["meta"] : "Buca model hizmetleri");
+            $pageTitle = htmlspecialchars($EtiketBaslik, ENT_QUOTES, 'UTF-8') . " - " . (isset($SiteBilgi["siteadi"]) ? $SiteBilgi["siteadi"] : "Hizmet Rehberi");
+            $pageDescription = htmlspecialchars($EtiketBaslik, ENT_QUOTES, 'UTF-8') . " etiketi ile ilgili hizmet verenler. " . (isset($SiteBilgi["meta"]) ? $SiteBilgi["meta"] : "ÖNE ÇIKAN İLAN hizmetleri");
         }
         break;
 }
@@ -522,9 +522,9 @@ $desktopCanonical = $desktop_site_url . ($_SERVER['REQUEST_URI'] ?? '/');
     <div class="amp-wrapper">
         <!-- Header -->
         <header class="site-header">
-            <a href="<?php echo htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/bucamodel', ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
+            <a href="<?php echo htmlspecialchars($AmpBilgi['amp_telegram'] ?? 'https://t.me/exampleportal', ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener" class="telegram-btn">✈ Reklam Ver</a>
             <a href="<?php echo isset($SiteBilgi["siteurl"]) ? $SiteBilgi["siteurl"] : "http://localhost/"; ?>" class="branding">
-                <?php echo isset($SiteBilgi["logoyazi"]) ? htmlspecialchars($SiteBilgi["logoyazi"], ENT_QUOTES, 'UTF-8') : 'Buca Elit Model'; ?>
+                <?php echo isset($SiteBilgi["logoyazi"]) ? htmlspecialchars($SiteBilgi["logoyazi"], ENT_QUOTES, 'UTF-8') : 'Hizmet Rehberi'; ?>
             </a>
         </header>
         

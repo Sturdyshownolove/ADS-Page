@@ -1,0 +1,224 @@
+/* ==========================================================================
+   bucacadde.com Esinlenmeli Kompakt 3'lü Vitrin Kart Tasarımı System
+   ========================================================================== */
+
+:root {
+  --bg-dark: #0b0b0f;
+  --bg-paper: #13141c;
+  --bg-card: #1a1b26;
+  --text-main: #f0f2f5;
+  --text-muted: #94a3b8;
+  --accent-gold: #fbbf02;
+  --accent-rose: #e11d48;
+  --glass-bg: rgba(19, 20, 28, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --rp-content-max: 1240px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-dark) !important;
+  color: var(--text-main) !important;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--accent-gold);
+  text-decoration: none;
+}
+a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.grid-container {
+  width: min(var(--rp-content-max), calc(100% - 16px));
+  margin-inline: auto;
+}
+
+.navbar-inverse {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+.navbar-inverse .navbar-brand {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff !important;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: var(--text-main) !important;
+  font-weight: 600;
+}
+
+/* Vitrin Hero */
+.vitrin-top-frame {
+  width: 100%;
+  background: #13141c;
+  border-bottom: 1px solid var(--glass-border);
+  padding: 80px 0 25px 0;
+  text-align: center;
+}
+
+.site-branding {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-title-wrapper {
+  margin: 25px 0 12px 0;
+  border-bottom: 2px solid var(--accent-rose);
+  padding-bottom: 6px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* BUCACADDE.COM 3'LÜ KOMPAKT VİTRİN KART DÜZENİ */
+.glist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-start;
+}
+
+.list2 {
+  width: calc(33.333% - 4px);
+  background: #000000;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.12);
+  margin-bottom: 6px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
+}
+
+.list2:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-gold);
+}
+
+.list2 a {
+  display: block;
+  text-decoration: none !important;
+}
+
+.list2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 100 / 150;
+  object-fit: cover;
+}
+
+.isim {
+  background: #fbbf02;
+  color: #000000 !important;
+  font-size: 11px;
+  font-weight: 900;
+  text-align: center;
+  padding: 4px 2px;
+  text-transform: uppercase;
+  font-family: arial, sans-serif;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gold-isim {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  color: #000000 !important;
+}
+
+.tel {
+  background: #000000;
+  color: #ffffff !important;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+  padding: 4px 2px;
+  text-transform: uppercase;
+  font-family: arial, sans-serif;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+/* 3'lü Mega İlanlar Dizilimi */
+.glist-mega {
+  gap: 6px !important;
+}
+.glist-mega .list2 {
+  width: calc((100% - 12px) / 3) !important;
+}
+
+/* 5'li Dizilim (VIP, Gold, Elit - Tam 5 İlan Yana Yana) */
+.glist-5 {
+  gap: 4px !important;
+}
+.glist-5 .list2 {
+  width: calc((100% - 16px) / 5) !important;
+}
+
+.mega-isim {
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%) !important;
+  color: #ffffff !important;
+}
+
+.vip-isim {
+  background: linear-gradient(135deg, #fbbf02 0%, #d97706 100%) !important;
+  color: #000000 !important;
+}
+
+.gold-isim {
+  background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%) !important;
+  color: #000000 !important;
+}
+
+.elit-isim {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+}
+
+@media (max-width: 480px) {
+  .glist-5 .isim { font-size: 9px !important; padding: 2px 1px !important; }
+  .glist-5 .tel { font-size: 10px !important; padding: 2px 1px !important; }
+}
+
+@media (min-width: 768px) {
+  .glist-mega .list2 {
+    width: calc((100% - 12px) / 3) !important;
+  }
+  .glist-5 .list2 {
+    width: calc((100% - 16px) / 5) !important;
+  }
+  .isim { font-size: 12px; }
+  .tel { font-size: 13px; }
+}
+
+/* SEO İçerik Kutusu */
+.site-content {
+  background: var(--bg-paper);
+  border: 1px solid var(--glass-border);
+  padding: 25px;
+  border-radius: 10px;
+  margin: 25px 0;
+  color: #d1d5db;
+}
+
+

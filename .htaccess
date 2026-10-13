@@ -1,0 +1,107 @@
+# APACHE MOD_REWRITE MODÜLÜNÜ AKTİFLEŞTİR
+RewriteEngine On
+
+# Dizinlerin listelenmesini engelle (Güvenlik)
+Options -Indexes
+
+#
+# --- GÜVENLİK VE SEO İÇİN STANDART YÖNLENDİRMELER ---
+#
+
+# .htaccess dosyasının kendisine erişimi engelle
+<Files .htaccess>
+    Require all denied
+</Files>
+
+# Hassas dosya türlerine erişimi engelle (SQL dökümleri, loglar, yedekler)
+<FilesMatch "\.(sql|log|bak|backup|old|zip|tar|gz)$">
+    Require all denied
+</FilesMatch>
+
+# Uzantısız log dosyaları
+<Files "error_log">
+    Require all denied
+</Files>
+
+# Güvenlik header'ları
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Gzip sıkıştırma
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/xml application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+</IfModule>
+
+# Tarayıcı önbelleği
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# Tüm istekleri HTTPS'e zorla (Sitenizde SSL sertifikası varsa bu bölümdeki # işaretlerini kaldırın)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# www olan istekleri www olmayan adrese yönlendir (SEO için)
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+
+# Eski panel ve admin adreslerini gizli ex0-1mil/ adresine yönlendir
+RewriteRule ^panel/?$ ex0-1mil/ [R=301,L]
+RewriteRule ^panel/(.*)$ ex0-1mil/$1 [R=301,L]
+RewriteRule ^admin/?$ ex0-1mil/ [R=301,L]
+RewriteRule ^admin/(.*)$ ex0-1mil/$1 [R=301,L]
+
+
+#
+# --- SİTE ÖN YÜZÜ İÇİN SEO DOSTU URL KURALLARI ---
+#
+# Sitemap ve RSS (robots.txt sitemap.xml'i işaret ediyor)
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+RewriteRule ^rss\.xml$ rss.php [L]
+# robots.txt'yi dinamik üret (local/canlı URL ayrımı kendiliğinden çözülür)
+RewriteRule ^robots\.txt$ robots.php [L]
+# llms.txt — AI arama motorları için site özeti
+RewriteRule ^llms\.txt$ llms.php [L]
+
+RewriteRule ^ilan/([^/]+)/([0-9]+)\.html$ modeldetay.php?id=$2 [L,QSA]
+RewriteRule ^yazi/([^/]+)/([0-9]+)\.html$ blogdetay.php?id=$2 [L,QSA]
+RewriteRule ^blog/([^/]+)/([0-9]+)\.html$ blogdetay.php?id=$2 [L,QSA]
+RewriteRule ^kategori/([^/]+)/([0-9]+)\.html$ kategoridetay.php?id=$2 [L,QSA]
+RewriteRule ^etiket/([^/]+)\.html$ etiketsayfasi.php?etiket=$1 [L,QSA]
+RewriteRule ^etiket/([^/]+)/sayfa/([0-9]+)$ etiketsayfasi.php?etiket=$1&sayfa=$2 [L,QSA]
+
+# YENİ EKLENEN KURALLAR
+RewriteRule ^ilan-etiket/([^/]+)\.html$ ilanetiketsayfasi.php?etiket=$1 [L,QSA]
+RewriteRule ^ilan-etiket/([^/]+)/sayfa/([0-9]+)$ ilanetiketsayfasi.php?etiket=$1&sayfa=$2 [L,QSA]
+RewriteRule ^tum-yazilar/?$ tumblogyazilari.php [L,QSA]
+RewriteRule ^tum-yazilar/sayfa/([0-9]+)$ tumblogyazilari.php?sayfa=$1 [L,QSA]
+# Blog listesi sayfalaması (site ön yüzü — panel'e DEĞİL kök blog.php'ye gider)
+RewriteRule ^blog/sayfa/([0-9]+)$ blog.php?sayfa=$1 [L,QSA]
+
+
+#
+# --- GENEL KURALLAR (En Sonda Olmalı) ---
+#
+
+# .php uzantısını dosya adlarından kaldır
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# Özel 404 sayfası
+ErrorDocument 404 /404.php

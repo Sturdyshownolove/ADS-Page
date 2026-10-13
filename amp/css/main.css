@@ -1,0 +1,28 @@
+
+.likesidslike {
+	
+  margin: 0px auto;
+  text-align:center;
+  padding: 5px;
+  background:#fff;
+}
+
+.fa-thumbs-down, .fa-thumbs-o-down {
+  transform:rotateY(180deg);
+  
+}
+.pointer{cursor:pointer;}
+.logged_in_user {
+  padding: 10px 30px 0px;
+}
+i.like {
+  color: #5cb85c;
+}
+i.dislike {
+  color: #d9534f;
+}
+ span.likes,span.dislikes{vertical-align: super; }
+ 
+span.likes{margin-right:40px;}
+.temizsatir{clear:both;}
+

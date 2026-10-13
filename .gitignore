@@ -1,0 +1,8 @@
+﻿logs/*.txt
+logs/*.log
+!logs/.gitkeep
+.env
+.env*.local
+*.sql.bak
+.DS_Store
+Thumbs.db
